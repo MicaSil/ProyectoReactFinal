@@ -1,0 +1,47 @@
+.detalleCart{
+    background-color: brown;
+}
+
+.conten {
+    margin: 15px;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 20px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    padding-top: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    transition: .4s;
+    background: rgb(0, 0, 0);
+}
+
+
+.img{
+    width: 400px;
+    height: 400px;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    border-radius: 20px;
+}
+
+.name {
+    font-size: 30px;
+    text-align: center;
+    color: rgb(231, 231, 231);
+    margin: 0;
+}
+.precio {
+    font-size: 20px;
+    margin-top: 10px;
+    text-align: center;
+    color: white;
+    padding-top: 0 8px;
+}
+
+.texto {
+    font-size: 20px;
+    text-align: center;
+    color: white;
+    margin: 0;
+}

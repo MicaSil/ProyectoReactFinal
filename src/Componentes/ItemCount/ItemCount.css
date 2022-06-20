@@ -1,0 +1,31 @@
+.Agregar {
+    margin: 1rem auto;
+    background-color: red;
+    border: none;
+    padding: 1rem;
+    border-radius: 1rem;
+    color: white;
+}
+
+
+.containerButton {
+    margin: 1rem auto;
+    width: 30%;
+    height: 40%;
+}
+
+.Boton1{
+    background-color: red;
+    border: none;
+    color:white;
+    border-radius: 1rem;
+    padding: 1rem;
+    width: 15%;
+    height: 15%;
+}
+
+label {
+    padding: 2rem;
+    font-size: 2rem;
+    color: white;
+}

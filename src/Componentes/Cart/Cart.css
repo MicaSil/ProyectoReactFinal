@@ -1,0 +1,29 @@
+
+.carritoTitle{
+    text-align: center;
+    color: black;
+    font-family: emoji;
+}
+
+.cart {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+    padding-left: 20%;
+    padding-right: 10%;
+    background-color: black;
+    border-radius: 20px;
+    color: white;
+    margin-bottom: 100px;
+    
+    
+}
+
+.boton {
+    background-color: red;
+    border: none;
+    color: white;
+    margin-bottom: 40px;
+    border-radius: 5px;
+    
+}
