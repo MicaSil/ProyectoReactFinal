@@ -8,7 +8,7 @@ const items =
 {src: '/imagenes/tienda3.jpg', altText: '', caption: ''},
 {src: '/imagenes/tienda4.jpg', altText: '', caption: ''}];
 
-const App = (props) => {
+const App = () => {
     const[activeIndex, setActiveIndex] = useState(0);
     const[animating, setAnimating] = useState(false)
 
@@ -35,10 +35,8 @@ const App = (props) => {
         <CarouselItem 
         onExiting={() => setAnimating(true)} 
         onExited={() => setAnimating(false)} 
-        key={item.src}>
-            
-            <img src={item.src} alt={item.altText}  width="100%" height="900px" />
-            <h2>Bienvenidos</h2>
+        key={item.src}>        
+                <img src={item.src} alt={item.altText}  width="100%" height="900px" />
             <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
         </CarouselItem>
     );
