@@ -9,6 +9,7 @@ import { CartContextProvider } from './Context/CartContext';
 import { NotificacionProvider } from './Notificacion/Notificacion';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from './Componentes/Footer/Footer';
+import Formulario from './From/Formulario'
 
 const App = () => {
 
@@ -19,10 +20,11 @@ const App = () => {
           <BrowserRouter>
             <NavBar />
             <Routes>
-              <Route path='/' element={<ItemListContainer greeting="Bienvenidos a nuestra tienda online"/>} />
+              <Route path='/' element={<ItemListContainer />} />
               <Route path='/category/:categoryId' element={<ItemListContainer greeting="Productos"/>}/>
               <Route path='/detail/:productId' element={<ItemDetailContainer />} />
               <Route path='/cart' element={<Cart />}></Route>
+              <Route path='/Formulario' element={<Formulario/>}></Route>
             </Routes>
             <Footer />
           </BrowserRouter>

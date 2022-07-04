@@ -6,6 +6,7 @@ import { FaFacebook } from "react-icons/fa";
 import { FaInstagramSquare } from 'react-icons/fa';
 import { FaGithub } from 'react-icons/fa';
 
+
 const Footer = () => {
     return(
             <footer className="footer">

@@ -9,9 +9,9 @@ const NavBar = () => {
             <nav>
                 <Link to="/" className="logo2"><h1 className="logo">REGALA<span>ME</span></h1></Link>               
                 <ul>
-                <Link to="/category/Damas"><li className="">CHICAS</li></Link>
-                <Link to="/category/Hombres"><li className="">CHICOS</li></Link>
-                <Link to="/category/Niños"><li className="">NIÑOS</li></Link>
+                <Link to="/category/Remeras"><li className="">REMERAS</li></Link>
+                <Link to="/category/Jeans"><li className="">JEANS</li></Link>
+                <Link to="/category/Calzado"><li className="">CALZADO</li></Link>
                 </ul>
                 <CartWidget className="carrito"/>
             </nav>

@@ -24,8 +24,8 @@
     height: 15%;
 }
 
-label {
+.count {
     padding: 2rem;
     font-size: 2rem;
-    color: white;
+    color: black;
 }

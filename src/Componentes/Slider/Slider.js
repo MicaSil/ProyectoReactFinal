@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
+import './Slider.css'
 import {Carousel, CarouselItem, CarouselControl, CarouselIndicators, CarouselCaption} from 'reactstrap';
 
 
 
+
 const items = 
-[{src: '/imagenes/tienda1.jpg', altText: '', caption: ''},
-{src: '/imagenes/tienda3.jpg', altText: '', caption: ''},
-{src: '/imagenes/tienda4.jpg', altText: '', caption: ''}];
+[{src: '/imagenes/tienda1.jpg', altText: '' , caption: 'WHEN WOMEN SUPPORT EACH OTHER, INCREDIBLE THINGS HAPPEN.',},
+{src: '/imagenes/tienda.jpg', altText: '', caption: 'BLACK IS ALAWAYS A GOOD IDEA.'},
+{src: '/imagenes/tienda3.jpg', altText: '', caption: 'LIFE IS NOT PERFECT, BUT YOUR OUTFIT CAN BE.'}];
 
 const App = () => {
     const[activeIndex, setActiveIndex] = useState(0);
@@ -37,7 +39,8 @@ const App = () => {
         onExited={() => setAnimating(false)} 
         key={item.src}>        
                 <img src={item.src} alt={item.altText}  width="100%" height="900px" />
-            <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
+            <CarouselCaption  className="textoSlider" captionHeader={item.caption}  />
+            
         </CarouselItem>
     );
     });

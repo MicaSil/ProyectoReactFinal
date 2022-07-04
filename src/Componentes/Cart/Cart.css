@@ -1,3 +1,69 @@
+/*Carrito Vacio*/
+
+.carritoVacio {
+    text-align: center;
+    padding-bottom: 10vw;
+    padding-top: 10vw;
+}
+
+.cartVacio{
+    display: inline-block;
+    line-height: initial;
+    font-size: 40px;
+    border: 2px solid red;
+    border-radius: 65px;
+    padding: 55px;
+    margin-bottom: 20px;
+}
+
+.textoVacio{
+    line-height: 2em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: center;
+    font-size: 35px;
+}
+
+.parrafoVacio {
+    line-height: 2em;
+    max-width: 600px;
+    margin: auto;
+    font-size: 20px;
+}
+
+.buttonVacio{
+    text-align: center;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    outline: none;
+    cursor: pointer;
+    margin-top: 10px;
+    background-color: red;
+    color: white;
+
+}
+.buttonOrden {
+    text-align: center;
+    margin-left: 10px;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    outline: none;
+    cursor: pointer;
+    margin-top: 10px;
+    background-color: red;
+    color: white;
+}
+
+/*Carrito Compras*/
+
+.detalleCompra{
+    padding-bottom: 9rem;
+}
 
 .carritoTitle{
     text-align: center;
@@ -5,25 +71,22 @@
     font-family: emoji;
 }
 
-.cart {
-    display: flex;
-    justify-content: space-between;
-    padding-top: 40px;
-    padding-left: 20%;
-    padding-right: 10%;
-    background-color: black;
-    border-radius: 20px;
+
+
+.buttonLimpiar{
+    align-items: center;
+    font-size: 20px;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 880px;
+    margin-top: 10px;
+    background-color: red;
     color: white;
-    margin-bottom: 100px;
-    
-    
 }
 
-.boton {
-    background-color: red;
-    border: none;
-    color: white;
-    margin-bottom: 40px;
-    border-radius: 5px;
-    
+.totalFinal{
+    text-align: center;
+    background-color: rgb(255, 249, 249);;
+    color: black;
 }

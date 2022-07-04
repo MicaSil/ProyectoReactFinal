@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import ItemCount from "../ItemCount/ItemCount"
 import CartContext from "../../Context/CartContext"
 import { useNotificacion } from "../../Notificacion/Notificacion"
-
+import '../ItemDetail/ItemDetail.css'
 
 
 
@@ -35,7 +35,7 @@ const ItemDetail = ({ id, img, name, stock, precio, descripcion, category}) => {
                     <p className="texto">Categoria: {category}</p>
                     <p className="texto">Stock: {stock}</p>
                         {cantidad > 0 
-                        ? <Link to= '/cart'><button> Finalizar Compra </button></Link> 
+                        ? <Link to= '/cart'><button className="finalizar">Ir al carrito</button></Link> 
                         : <ItemCount stock = {10} initial = {initialValue} onAdd = {onAdd} /> }
                 </div>
 

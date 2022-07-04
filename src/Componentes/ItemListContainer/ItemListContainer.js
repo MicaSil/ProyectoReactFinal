@@ -4,6 +4,7 @@ import {useParams} from "react-router-dom"
 import  "./ItemListContainer.css"
 import Slider from '../Slider/Slider'
 import { db } from "../../Services/Firebase"
+import { Spinner } from "reactstrap"
 import {getDocs, collection, query, where} from "@firebase/firestore"
 
 
@@ -33,10 +34,10 @@ import {getDocs, collection, query, where} from "@firebase/firestore"
             <>
             <Slider />
             <div>
-                <h1 className="greetin">{greeting}</h1>
+                <h1 className="greetin">PRODUCT<span>OS</span> DESTACAD<span>OS</span></h1>
                 {productos.length > 0 
                     ?<ItemList productos={productos}/>
-                    :<h1>Cargando...</h1>
+                    :<Spinner className="spinner"  />
                 }
                 
             </div>
