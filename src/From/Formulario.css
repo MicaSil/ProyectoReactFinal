@@ -1,5 +1,143 @@
 
-.formContainer{
+
+.formulario{
+    max-width: 800px;
+    width: 90%;
+    margin: auto;
+    padding: 40px;
+    margin-top: 50px;
+    margin-bottom: 258px;
+    background: #000;
+}
+
+.form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.formLabel{
+    display: block;
+    font-weight: 700;
+    padding: 10px;
+    max-height: 40px;
+    cursor: pointer;
+    color: #fff;
+}
+
+
+@media (max-width: 800px) {
+    .form{
+        grid-template-columns: 1fr;
+    }
+}
+
+.formularioInput{
+    position: relative;
+    z-index: 90;
+}
+
+.formInput{
+    width: 100%;
+    background: #fff;
+    border-radius: 3px;
+    height: 45px;
+    line-height: 45px;
+    padding: 0 40px 0 10px;
+    transition: .3s ease all;
+    border: 3px solid transparent;
+    
+}
+
+
+.parrafo{
+    font-size: 16px;
+    margin-bottom: 0;
+    color: red;
+    display: none;
+
+}
+
+.check{
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+    z-index: 100;
+    font-size: 16px;
+    color: green;
+    opacity: 0;
+}
+
+.times{
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+    z-index: 100;
+    font-size: 16px;
+    color: red;
+    opacity: 0;
+}
+
+.terminosDiv{
+    grid-column: span 2;
+    color: #fff;
+
+}
+.terminos{
+    margin-right: 10px;
+}
+
+
+
+
+.botonEnviar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    grid-column: span 2;
+}
+
+.submit{
+    height: 45px;
+    line-height: 45px;
+    width: 30%;
+    background: red;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .1s ease all;
+}
+
+.submit:hover{
+    box-shadow: 3px 0px 30px rgba(163, 163, 163, 1);
+}
+
+.formularioEnviar{
+    font-size: 16px;
+    color: green;
+}
+
+.error{
+    height: 45px;
+    line-height: 45px;
+    background: #f66060;
+    padding: 0px 15px;
+    border-radius: 3px;
+    grid-column: span 2;
+}
+
+.advertencia{
+    margin: 0;
+}
+b{   
+    margin-left: 10px;
+}
+
+
+
+/* .formContainer{
     width: 450px;
     margin: auto;
     margin-top: 150px;
@@ -37,4 +175,4 @@
     cursor: pointer;
     background-color: red;
     color: white;
-}
+} */

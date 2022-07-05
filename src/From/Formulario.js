@@ -1,47 +1,95 @@
-import {useForm} from 'react-hook-form'
-import { Link } from 'react-router-dom';
-import CartContext from '../Context/CartContext';
 import './Formulario.css'
+import {useForm}  from 'react-hook-form'
+import { useState} from "react";
+import {addDoc, collection} from 'firebase/firestore'
+import {db} from '../Services/Firebase';
+import Swal from 'sweetalert2'
+import { useContext } from 'react';
+import CartContext from '../Context/CartContext';
+
+
 
 
 const Formulario = () => {
+    const {register} = useForm();
+    const {cart, precioTotal, borrarTodo} = useContext(CartContext)
 
-    const {register,formState: {errors}, handleSubmit} = useForm();
+    const [datos, setDatos] = useState({
+        nombre:'',
+        email: '',
+        direccion: '' ,
+        telefono: '',
+    })
+    const crearOrder = (e) => {
+            e.preventDefault();
+            const ObjOrden = {
+                cliente: datos,
+                items: cart,
+                total: precioTotal()
+            }
+            const coleccion = collection(db, 'orders')
+            addDoc(coleccion, ObjOrden).then (({ id })=> {
+                Swal.fire({
+                    title: `${datos.nombre} estamos preparando su pedido`,
+                    text:`Detalle del pedido ${id}`,
+                    icon:'success',
+                })
 
-
-    
-    return (
+        
+        })
+        
+        borrarTodo()
+    }
+    const handleInputChange = (e) => {
+        setDatos({...datos, [e.target.name]: e.target.value})
+    }
+    return(
         <div className="formulario">
-        <div className="formContainer">
-            <h2 className="formTitle">FORMULAR<span>IO</span></h2>
-            <form className="form" onSubmit={handleSubmit}>
-                    <input className="formInput" placeholder="Nombre" type="text" {...register('nombre', {
-                        required: true
-                    })}/>
-                    {errors.nombre?.type === 'required' && <p>El campo nombre es requerido</p>}
-                    <input  className="formInput" placeholder="Apellido" type="text" {...register('apellido',{
-                        required: true
-                    })}/>
-                    {errors.apellido?.type === 'required' && <p>El campo apellido es requerido</p>}
-                    <input className="formInput" placeholder="Dirección" type="text" {...register('direccion',{
-                        required: true
-                    })}/>
-                    {errors.direccion?.type === 'required' && <p>El campo dirección es requerido</p>}
-                    <input className="formInput" placeholder="Email" type="text" {...register('email',{
-                        pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/i
-                    })} />
-                    {errors.email?.type === 'pattern' && <p>El formato del email no es correcto</p>}
-                    <input className="formInput" placeholder="Telefono" type="number" {...register('telefono',{
-                        required: true,
-                        maxLength: 8
-                    })}/>
-                    <button  type="submit" className="buttonCompra">Finalizar la compra</button>
+            <form  className="form">
+                <div>
+                    <label className="formLabel">Nombre Completo</label>
+                    <div className="formularioInput">
+                        <input className="formInput" type="text" placeholder="Nombre Completo" {...register('nombre', {required:true})} onChange={handleInputChange} value={datos.nombre}/>
+                        
+                    </div>    
+                    <p className="parrafo">Lorem Ipsum dolor sit amet.</p>
+                </div>
+                <div>
+                    <label className="formLabel">Email</label>
+                    <div className="formularioInput">
+                        <input  className="formInput"  type="email" placeholder="Email" {...register('email', {required: true})} onChange={handleInputChange} value={datos.email}/>
+                        
+                    </div>
+                    <p className="parrafo">Lorem Ipsum dolor sit amet.</p>
+                </div>
+                <div>
+                    <label className="formLabel">Dirección</label>
+                    <div className="formularioInput">
+                        <input className="formInput"  type="text" placeholder="Dirección" {...register('direccion', {required: true})} onChange={handleInputChange} value={datos.direccion} />
+                    </div>
+                    <p className="parrafo">Lorem Ipsum dolor sit amet.</p>
+                </div>
+                <div>
+                    <label className="formLabel">Teléfono</label>
+                    <div className="formularioInput">
+                        <input className="formInput"  type="number" placeholder="Teléfono" {...register('telefono',{required: true})} onChange={handleInputChange} value={datos.telefono}/>
+                    </div>
+                    <p className="parrafo">Lorem Ipsum dolor sit amet.</p>
+                </div>
+                <div className="terminosDiv">
+                    <label>
+                        <input type="checkbox" name="terminos" className="terminos" />   
+                        Acepto los terminos y condiciones
+                    </label>
+                </div>
+                <div className="botonEnviar">
+                    <button  type="submit"  onClick={crearOrder} className="submit">Enviar</button>
+                </div>
             </form>
-            
         </div>
-    </div>
-    
+
     )
+    
 }
 
 

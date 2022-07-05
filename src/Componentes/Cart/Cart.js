@@ -15,12 +15,10 @@ const Cart = () => {
 
     const {cart, borrarTodo, precioTotal, totalCantidad} = useContext(CartContext) 
 
-
-    const crearOrden = () =>{
-        console.log('crear orden');
-    }
     
-
+    const ordenCompras = () => {
+        console.log('ordenCompras');
+    }
     
     if(totalCantidad() === 0) {
         return (
@@ -40,7 +38,7 @@ const Cart = () => {
             { cart.map(p => <CartItem key={p.id} {...p}/>) }
             <h3 className="totalFinal">Total: ${precioTotal()}</h3>
             <button onClick={() => borrarTodo()} className="buttonLimpiar">Limpiar carrito</button>
-            <Link to="/Formulario"><button className="buttonOrden" onClick={crearOrden}>Generar orden</button></Link>
+            <Link to="/Formulario"><button className="buttonOrden" onClick={ordenCompras}>Generar orden</button></Link>
         </div>
     )
 }
